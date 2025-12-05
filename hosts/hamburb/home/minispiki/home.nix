@@ -13,6 +13,7 @@
     nushell
     fastfetch
     pavucontrol
+    gh
   ];
 
   programs.bash.enable = true;
