@@ -12,8 +12,11 @@ in
       chmod -R 775 ${path}
       chown -R root:nix ${path}
     '';
-    serviceConfig.Type = "oneshot";
-    serviceConfig.RemainAfterExit = true;
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      Environment = "PATH=/run/current-system/sw/bin/:$PATH";
+    };
     wantedBy = ["multi-user.target"];
   };
 }
