@@ -31,17 +31,6 @@
     };
   };
 
-  # Systemd stuff 
-  systemd.tmpfiles.settings."10-nixos-directory" = {
-    "/etc/nixos".d = {
-      group = "nix";
-      mode = "0775";
-    };
-    "/etc/nixos/**/*".z = {
-      group = "nix";
-      mode = "0775";
-    };
-  };
  
   # Networking
   networking = {
@@ -51,7 +40,11 @@
 
   # Userborn Authentication
   services.userborn.enable = true;
-  
+
+  systemd.tmpfiles.rules = [
+    "d /etc/nixos 0755 0 990 - -" # make nixos files readable and /etc/nixos writable
+  ];
+
   # Timezone
   time.timeZone = "Europe/London";
   

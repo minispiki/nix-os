@@ -1,2 +1,2 @@
 # nixos config
-I tried, please forgive me
+simple kde system that works :D
