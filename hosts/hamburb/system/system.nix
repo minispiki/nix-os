@@ -43,6 +43,7 @@
 
   systemd.tmpfiles.rules = [
     "d /etc/nixos 0755 0 990 - -" # make nixos files readable and /etc/nixos writable
+    "Z /etc/nixos 0755 0 990 - -"
   ];
 
   # Timezone
