@@ -8,6 +8,7 @@ in
     description = "Make /etc/nixos read+write to nix group";
     after = ["network.target"];
     serviceConfig.ExecStart = ''
+      export PATH=${pkgs.coreutils}/bin:$PATH
       chmod -R 775 ${path}
       chown -R root:nix ${path}
     '';
