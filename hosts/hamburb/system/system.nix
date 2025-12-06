@@ -43,7 +43,6 @@
 
   systemd.tmpfiles.rules = [
     "d /etc/nixos 0755 0 990 - -" # make nixos files readable and /etc/nixos writable
-    "Z /etc/nixos 0755 0 990 - -"
   ];
 
   # Timezone
@@ -56,11 +55,11 @@
     useXkbConfig = true;
   };
   
-  nix.gc = {
-    automatic = true;
-    dates = "20:00";
-    options = "--delete-older-than 3d";
-  };
+  #nix.gc = {
+  #  automatic = true;
+  #  dates = "20:00";
+  #  options = "--delete-older-than 3d";
+  #};
 
   system.autoUpgrade.enable = true;
 }

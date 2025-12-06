@@ -41,6 +41,17 @@
     allowUnfree = true; # Allow closed sourced programs
   };
 
+  # nh bc its better
+  programs.nh = {
+    enable = true;
+    flake = "/etc/nixos";
+    # Handle Rubbish
+    clean = {
+      enable = true;
+      extraArgs = "--keep-since 3d --keep 3";
+    };
+  };
+
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
