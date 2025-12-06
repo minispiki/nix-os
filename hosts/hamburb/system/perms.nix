@@ -13,6 +13,6 @@ in
     '';
     serviceConfig.Type = "oneshot";
     serviceConfig.RemainAfterExit = true;
-    wantedBy = ["multi-user.target"]
+    wantedBy = ["multi-user.target"];
   };
 }
