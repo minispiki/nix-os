@@ -1,7 +1,12 @@
 {config, lib, pkgs, ...}:
 
 {
-  boot= {
+
+  imports = [
+    ./perms.nix
+  ];
+
+  boot=  {
     plymouth = {
       enable = true;
       theme= "rings";
