@@ -1,10 +1,34 @@
 {config, lib, pkgs, ...}:
 
 {
-  # Use systemd bootloader
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot= {
+    plymouth = {
+      enable = true;
+      theme= "rings";
+      themePackages = with pkgs; [
+        (adi1090x-plymouth-themes.override {
+          selected_themes = [
+            "rings"
+          ];
+        })
+      ];
+    };
+    
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "udev.log_priority=3"
+      "rd.systemd.show_status=auto"
+    ];
+    
+    loader = {
+      # Systemd boot
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   # Systemd stuff 
@@ -13,7 +37,7 @@
       group = "nix";
       mode = "0775";
     };
-    "/etc/nixos/*".z = {
+    "/etc/nixos/**/*".z = {
       group = "nix";
       mode = "0775";
     };
