@@ -14,6 +14,7 @@
     fastfetch
     pavucontrol
     gh
+    anki-bin
   ];
 
   programs.bash.enable = true;
