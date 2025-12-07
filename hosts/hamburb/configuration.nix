@@ -12,9 +12,8 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  # System stuff
+  # Fix perms for /etc/nixos
   nixdirperms.enable = true;
-
 
   # enable plymouth
   plymouth.enable = true;
