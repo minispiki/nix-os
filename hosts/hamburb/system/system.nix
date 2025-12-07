@@ -16,9 +16,6 @@
   # Networking
   network.enable = true;
   
-  # Userborn Authentication
-  services.userborn.enable = true;
-
   # Configure localisation
   local.enable = true;
 

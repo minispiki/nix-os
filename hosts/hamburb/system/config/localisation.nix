@@ -6,7 +6,7 @@
       lib.mkEnableOption "Setup locale";
   };
 
-  config = lib.mkIf config.locale.enable {
+  config = lib.mkIf config.local.enable {
     time.timeZone = "Europe/London";
     
     i18n.defaultLocale = "en_GB.UTF-8";
