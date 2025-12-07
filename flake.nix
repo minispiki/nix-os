@@ -1,4 +1,4 @@
-{
+ {
   description = "System flake cus why not?";
 
   inputs = {

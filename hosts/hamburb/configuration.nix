@@ -10,6 +10,10 @@
       ./system/system.nix
       inputs.home-manager.nixosModules.default
     ];
+
+  # System stuff
+  nixdirperms.enable = true;
+
   
   users.groups.nix = {
     name = "nix";

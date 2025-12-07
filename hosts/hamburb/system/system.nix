@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ./perms.nix
+    ./config/perms.nix
   ];
 
   boot=  {
