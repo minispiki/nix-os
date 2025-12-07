@@ -1,4 +1,4 @@
-{config, lib, pkgs, config, ...}:
+{config, lib, pkgs, ...}:
 let
   path = "/etc/nixos";
   app = "/run/current-system/sw/bin";
