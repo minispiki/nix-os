@@ -14,6 +14,11 @@
   # System stuff
   nixdirperms.enable = true;
 
+
+  # enable plymouth
+  plymouth.enable = true;
+
+  networking.hostname = "hamburb";
   
   users.groups.nix = {
     name = "nix";
